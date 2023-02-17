@@ -19,4 +19,11 @@ class Character < ApplicationRecord
 
     return the_one
   end
+
+  belongs_to(:actor, {
+    :class_name => "Character",
+    :foreign_key => "actor_id"
+  })
+
+
 end

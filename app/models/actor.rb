@@ -31,4 +31,14 @@ class Actor < ApplicationRecord
     return the_many
   end
 
+  has_many(:characters, {
+    :class_name => "Character",
+    :foreign_key => "actor_id"
+  })
+
+  has_many(:filmography, {
+    :class_name => "Movie",
+    :foreign_key => "actor_id"
+  })
+
 end
