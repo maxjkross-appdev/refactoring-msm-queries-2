@@ -36,9 +36,14 @@ class Actor < ApplicationRecord
     :foreign_key => "actor_id"
   })
 
+ # has_many(:filmography, {
+ #   :class_name => "Movie",
+ #   :foreign_key => "actor_id"
+ # })
+
   has_many(:filmography, {
-    :class_name => "Movie",
-    :foreign_key => "actor_id"
+    :through => :characters,
+    :source => :movie
   })
 
 end

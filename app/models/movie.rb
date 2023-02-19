@@ -27,4 +27,11 @@ class Movie < ApplicationRecord
     :class_name => "Director",
     :foreign_key => "director_id"
   })
+
+  has_many(:character, {
+    :class_name => "Character",  #was "movie" before
+    :foreign_key => "character_id"  #was movie_id before
+  })
+
+
 end

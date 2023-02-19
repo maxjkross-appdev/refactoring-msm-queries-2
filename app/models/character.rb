@@ -25,5 +25,10 @@ class Character < ApplicationRecord
     :foreign_key => "actor_id"
   })
 
+  belongs_to(:movie, {
+    :class_name => "Movie",  #was "movie" before
+    :foreign_key => "character_id"  #was movie_id before
+  })
+
 
 end
